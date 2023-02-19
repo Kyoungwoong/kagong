@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class KagongController {
 
     private final MemberService memberService;
-    @GetMapping("/test")
+    @GetMapping("/another")
     public String kagongTest() {return "Spring boot react 연동 테스트";}
 
 //    @GetMapping("/home")

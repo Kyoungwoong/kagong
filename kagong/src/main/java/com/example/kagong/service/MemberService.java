@@ -89,5 +89,8 @@ public class MemberService {
     }
 
 
+    public Member findByEmail(String email) {
+        return memberRepository.findEmail(email).get(0);
+    }
 }
 

@@ -1,7 +1,7 @@
 package com.example.kagong.config;
 
-import com.example.kagong.security.JwtAuthenticationFilter;
-import com.example.kagong.security.JwtTokenProvider;
+//import com.example.kagong.security.JwtAuthenticationFilter;
+//import com.example.kagong.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final JwtTokenProvider jwtTokenProvider;
+//    private final JwtTokenProvider jwtTokenProvider;
 
     // 암호화에 필요한 PasswordEncoder 를 Bean 등록합니다.
     @Bean
@@ -26,11 +26,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     // authenticationManager를 Bean 등록합니다.
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
+//    @Bean
+//    @Override
+//    public AuthenticationManager authenticationManagerBean() throws Exception {
+//        return super.authenticationManagerBean();
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
@@ -42,9 +42,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/user/**").hasRole("USER")
                 .antMatchers("/**").permitAll()
-                .and()
-                .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider),
-                        UsernamePasswordAuthenticationFilter.class);
+                .and();
+//                .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider),
+//                        UsernamePasswordAuthenticationFilter.class);
         // JwtAuthenticationFilter를 UsernamePasswordAuthenticationFilter 전에 넣는다;
     }
 }

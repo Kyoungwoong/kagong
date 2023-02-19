@@ -55,4 +55,8 @@ public class UniversityService {
     public void deleteUniversity(long univId){
         universityRepository.deleteUniversity(univId);
     }
+
+    public University findUniversityByUnivName(String univName) {
+        return universityRepository.findByName(univName).get(0);
+    }
 }

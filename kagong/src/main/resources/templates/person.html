@@ -1,10 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>게시물 작성폼</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
-123
+
+
+</head>
+
+<style>
+
+    button {
+        background: #212529;
+        border: none;
+        border-radius: 4px;
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 1em;
+        padding: 4px 23px;
+    }
+    button1 {
+        background: #212529;
+        border: none;
+        border-radius: 4px;
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 1em;
+        padding: 4px 23px;
+    }
+
+    button:hover {
+        background: black;
+    }
+
+    button:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    button1:hover {
+        background: black;
+    }
+
+    button1:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    input-file-button{
+        padding: 6px 25px;
+        background-color:#FF6600;
+        border-radius: 4px;
+        color: black;
+        cursor: pointer;
+    }
+
+    .btn-upload {
+        background: #212529;
+        border: none;
+        border-radius: 4px;
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 1em;
+        padding: 4px 23px;
+    }
+
+    #file {
+        display: none;
+    }
+
+    .layout {
+        width: 5000px;
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+
+    .layout input {
+        width: 2000%;
+        box-sizing: border-box
+    }
+
+    .layout textarea {
+        width: 2000%;
+        margin-top: 10px;
+        min-height: 300px;
+    }
+
+    table.table2 {
+        border-collapse: separate;
+        border-spacing: 1px;
+        text-align: left;
+        line-height: 1.5;
+        border-top: 1px solid #ccc;
+        margin: 20px 10px;
+    }
+
+    table.table2 tr {
+        width: 50px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+    }
+
+    table.table2 td {
+        width: 100px;
+        padding: 10px;
+        vertical-align: top;
+        border-bottom: 1px solid #ccc;
+    }
+
+
+
+
+
+</style>
+
+<body style="background-color: darkgray">
+
+<div class="layout" style="float:left;">
+    <h3 class="my-3 border-bottom pb-2">BOARD FORM </h3>
+    <form action="/signup" method="post" enctype="multipart/form-data">
+        <table class="table2">
+            <tr>
+                <td>이름</td>
+                <td><input name="name" type="text" placeholder="제목 입력(4 ~ 100)" style="background-color:lightgray; "></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><textarea name="email" placeholder="내용을 입력하세요." style="background-color:lightgray; "></textarea></td>
+            </tr>
+            <tr>
+                <td>패스워드</td>
+                <td><textarea name="password" placeholder="내용을 입력하세요." style="background-color:lightgray; "></textarea></td>
+            </tr>
+<!--            <tr>-->
+<!--                <td >파일 첨부</td>-->
+<!--                <td>-->
+<!--                    <label for="file">-->
+<!--                        <div class="btn-upload">Content</div>-->
+<!--                    </label>-->
+<!--                    <input type="file" name="file" id="file" style="display: none">-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td>파일 첨부</td>-->
+<!--                &lt;!&ndash;                <td><input type="file" name="file2"></td>&ndash;&gt;-->
+<!--                <td>-->
+<!--                    <label for="file2">-->
+<!--                        <div class="btn-upload"> Style </div>-->
+<!--                    </label>-->
+<!--                    <input type="file" name="file2" id="file2" style="display: none">-->
+<!--                </td>-->
+<!--            </tr>-->
+            <tr>
+                <td>제출</td>
+                <td>
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+</div>
 </body>
+<script>
+
+</script>
 </html>
